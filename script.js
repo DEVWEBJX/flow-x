@@ -1,59 +1,42 @@
-// FLOW X — comportamento do site
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add("show");
-  });
-}, { threshold: 0.08 });
-
-document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-
 const menu = document.getElementById("menu");
-const nav = document.getElementById("navLinks");
+const navLinks = document.getElementById("navLinks");
 
-menu.addEventListener("click", () => {
-  const aberto = nav.dataset.open === "true";
-
-  if (aberto) {
-    nav.removeAttribute("style");
-    nav.dataset.open = "false";
-    return;
-  }
-
-  Object.assign(nav.style, {
-    display: "flex",
-    position: "absolute",
-    top: "76px",
-    left: "0",
-    right: "0",
-    padding: "22px",
-    flexDirection: "column",
-    alignItems: "stretch",
-    background: "#09070c",
-    borderBottom: "1px solid rgba(255,255,255,.12)"
-  });
-
-  nav.dataset.open = "true";
+menu?.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menu.setAttribute("aria-expanded", String(open));
+  menu.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
 });
 
-nav.querySelectorAll("a").forEach((link) => {
+document.querySelectorAll("#navLinks a").forEach(link => {
   link.addEventListener("click", () => {
-    if (window.innerWidth <= 950) {
-      nav.removeAttribute("style");
-      nav.dataset.open = "false";
+    navLinks.classList.remove("open");
+    menu?.setAttribute("aria-expanded", "false");
+    menu?.setAttribute("aria-label", "Abrir menu");
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
     }
   });
-});
+}, { threshold: 0.12 });
 
-// ============================================================
-// CONFIGURAÇÃO RÁPIDA
-// Troque somente o número abaixo pelo WhatsApp real da FLOW X.
-// Formato: país + DDD + número, sem espaços ou símbolos.
-// Exemplo: 5511999999999
-// ============================================================
-const WHATSAPP_FLOWX = "5500000000000";
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-const mensagem =
-  "Olá! Vim pelo site da FLOW X e quero conhecer as soluções de comunicação e marca.";
+document.getElementById("year").textContent = new Date().getFullYear();
 
-document.getElementById("whatsapp").href =
-  `https://wa.me/${WHATSAPP_FLOWX}?text=${encodeURIComponent(mensagem)}`;
+/*
+  TROQUE PELO NÚMERO OFICIAL DA FLOW X.
+  Exemplo: 5511999999999
+*/
+const whatsappNumber = "5511999999999";
+const whatsappMessage = encodeURIComponent(
+  "Olá, FLOW X! Vim pelo site e gostaria de falar sobre um projeto."
+);
+const whatsapp = document.getElementById("whatsapp");
+if (whatsapp) {
+  whatsapp.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+}

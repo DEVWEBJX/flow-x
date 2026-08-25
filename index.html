@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07050b">
   <meta name="description" content="FLOW X — comunicação, branding, audiovisual e soluções de marca.">
   <title>FLOW X | Comunicação que conecta</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="top-line"></div>
 
   <header class="header">
     <div class="container nav">
-      <a class="logo" href="#inicio">FLOW<span>X</span></a>
+      <a class="logo" href="#inicio" aria-label="FLOW X início">FLOW<span>X</span></a>
 
-      <button class="menu" id="menu" aria-label="Abrir menu">☰</button>
+      <button class="menu" id="menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
 
       <nav id="navLinks">
         <a href="#ecossistema">Ecossistema</a>
@@ -56,19 +58,14 @@
           <div class="vision-content">
             <p class="card-label">VISÃO</p>
             <h2>Ser referência em comunicação visual e estratégia de marca.</h2>
-
             <div class="divider"></div>
-
             <p class="card-label">MISSÃO</p>
             <p>Conectar marcas e pessoas através de conteúdo autêntico, criativo e estratégico.</p>
-
             <p class="card-label">VALORES</p>
             <div class="values">
               <span>Criatividade</span><span>Compromisso</span>
-              <span>Autenticidade</span><span>Inovação</span>
-              <span>Resultado</span>
+              <span>Autenticidade</span><span>Inovação</span><span>Resultado</span>
             </div>
-
             <p class="card-label">PROPÓSITO</p>
             <p>Dar voz, imagem e força para ideias, marcas e histórias que precisam ser vistas.</p>
           </div>
@@ -90,9 +87,8 @@
             <p class="service-kicker">FLOW X STUDIO</p>
             <h3>Ativos visuais</h3>
             <ul>
-              <li>Audiovisual</li><li>Cobertura de eventos</li>
-              <li>Reels e conteúdo</li><li>Documentários</li>
-              <li>Storytelling visual</li>
+              <li>Audiovisual</li><li>Cobertura de eventos</li><li>Reels e conteúdo</li>
+              <li>Documentários</li><li>Storytelling visual</li>
             </ul>
           </article>
 
@@ -101,9 +97,8 @@
             <p class="service-kicker">FLOW X BRANDING</p>
             <h3>Estratégia de marca</h3>
             <ul>
-              <li>Identidade visual</li><li>Posicionamento</li>
-              <li>Social media</li><li>Brand assets</li>
-              <li>Empresas, artistas e negócios</li>
+              <li>Identidade visual</li><li>Posicionamento</li><li>Social media</li>
+              <li>Brand assets</li><li>Empresas, artistas e negócios</li>
             </ul>
           </article>
 
@@ -129,7 +124,8 @@
         </div>
 
         <div class="ecosystem-flow reveal">
-          <span>NEGÓCIO</span><b>→</b><span>MARCA</span><b>→</b><span>CONTEÚDO</span><b>→</b><span>AÇÃO</span><b>→</b><span>RESULTADO</span>
+          <span>NEGÓCIO</span><b>→</b><span>MARCA</span><b>→</b><span>CONTEÚDO</span>
+          <b>→</b><span>AÇÃO</span><b>→</b><span>RESULTADO</span>
         </div>
       </div>
     </section>
@@ -159,18 +155,54 @@
     </section>
 
     <section class="section light" id="cases">
-      <div id="wear" class="anchor-offset"></div>
       <div class="container">
         <div class="section-title reveal">
           <p class="eyebrow">CASES & PORTFÓLIO</p>
           <h2>Seu trabalho merece uma vitrine.</h2>
-          <p>Esta área já está preparada para receber seus vídeos, fotos, campanhas e projetos reais.</p>
+          <p>Os dois espaços abaixo estão preparados para receber os vídeos de drone dos estabelecimentos.</p>
         </div>
 
-        <div class="wear-showcase">
+        <div class="video-grid">
+          <article class="case-video reveal">
+            <div class="video-frame">
+              <video controls playsinline preload="metadata" poster="assets/case-1.jpg">
+                <source src="assets/case-1.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+              </video>
+              <span class="video-badge">CASE 01</span>
+            </div>
+            <div class="case-info">
+              <p class="service-kicker">FLOW X STUDIO</p>
+              <h3>Estabelecimento 01</h3>
+              <p>Vídeo aéreo para apresentar o espaço, localização e experiência da marca.</p>
+            </div>
+          </article>
+
+          <article class="case-video reveal">
+            <div class="video-frame">
+              <video controls playsinline preload="metadata" poster="assets/case-2.jpg">
+                <source src="assets/case-2.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+              </video>
+              <span class="video-badge">CASE 02</span>
+            </div>
+            <div class="case-info">
+              <p class="service-kicker">FLOW X STUDIO</p>
+              <h3>Estabelecimento 02</h3>
+              <p>Segundo projeto audiovisual apresentado em uma experiência responsiva para celular e PC.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="portfolio-note reveal">
+          <strong>Pronto para receber os arquivos.</strong>
+          <span>Coloque os dois MP4 na pasta <code>assets</code> com os nomes <code>case-1.mp4</code> e <code>case-2.mp4</code>.</span>
+        </div>
+
+        <div class="wear-showcase" id="wear">
           <article class="wear-panel reveal">
             <div class="wear-image-wrap">
-              <img src="assets/flowx-wear-camisetas.jpeg" alt="Catálogo FLOW X Wear com camisetas, bermudas, calças e blusas">
+              <img src="assets/flowx-wear-camisetas.jpeg" alt="Catálogo FLOW X Wear">
             </div>
             <div class="wear-info">
               <p class="service-kicker">FLOW X WEAR</p>
@@ -191,15 +223,6 @@
               <div class="wear-tags"><span>Vários modelos</span><span>Várias cores</span><span>Seu logo</span></div>
             </div>
           </article>
-        </div>
-
-        <div class="wear-cta reveal">
-          <div>
-            <p class="eyebrow">PERSONALIZE DO SEU JEITO</p>
-            <h3>Sua marca. Seu estilo. FLOW X.</h3>
-            <p>Bordado, cores, aplicação de logo e soluções para uniformização e merchandising.</p>
-          </div>
-          <a class="btn primary" href="#contato">Solicitar orçamento →</a>
         </div>
       </div>
     </section>
