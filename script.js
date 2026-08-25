@@ -38,5 +38,5 @@ const whatsappMessage = encodeURIComponent(
 );
 const whatsapp = document.getElementById("whatsapp");
 if (whatsapp) {
-  whatsapp.href = `https://wa.me/${5531991023510}?text=${"Olá, FLOW X! Vim pelo site e gostaria de falar sobre um projeto.";
+  whatsapp.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}';
 }
