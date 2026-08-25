@@ -147,3 +147,91 @@ footer{background:#050409;border-top:1px solid var(--border);padding:35px 0}
   .reveal{opacity:1;transform:none;transition:none}
   *{transition:none!important}
 }
+/* =========================================
+   WEAR — RESPONSIVIDADE
+   ========================================= */
+
+.wear-showcase {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.wear-panel {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.wear-image-wrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+.wear-image-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.wear-info {
+    width: 100%;
+    min-width: 0;
+}
+
+.wear-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .wear-showcase {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .wear-panel {
+        width: 100%;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .wear-showcase {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .wear-panel {
+        border-radius: 18px;
+    }
+
+    .wear-info {
+        padding: 18px;
+    }
+
+    .wear-info h2,
+    .wear-info h3 {
+        font-size: clamp(20px, 6vw, 28px);
+        line-height: 1.15;
+    }
+
+    .wear-info p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .wear-tags {
+        gap: 6px;
+    }
+
+    .wear-tags span {
+        max-width: 100%;
+        font-size: 12px;
+        white-space: normal;
+    }
+}
