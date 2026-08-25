@@ -39,4 +39,4 @@ const whatsappMessage = encodeURIComponent(
 const whatsapp = document.getElementById("whatsapp");
 if (whatsapp) {
   whatsapp.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}';
-}
+});
