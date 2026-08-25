@@ -1,34 +1,32 @@
 # FLOW X — GitHub Pages
 
-## Estrutura
+## Arquivos principais
 
 - index.html
 - style.css
 - script.js
 - assets/
-  - case-1.mp4
-  - case-2.mp4
-  - case-1.jpg (opcional)
-  - case-2.jpg (opcional)
+  - case-1.mp4 — vídeo do Estabelecimento 01
+  - case-2.mp4 — vídeo do Estabelecimento 02
+  - case-1.jpg — capa do Case 01
+  - case-2.jpg — capa do Case 02
   - flowx-wear-camisetas.jpeg
   - flowx-wear-bones.jpeg
 
 ## Publicação
 
-1. Envie todos os arquivos para o repositório do GitHub.
-2. Vá em Settings → Pages.
-3. Em "Build and deployment", selecione "Deploy from a branch".
-4. Selecione a branch `main` e a pasta `/ (root)`.
-5. Salve.
-6. O GitHub vai gerar o endereço `https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/`.
+O projeto está preparado para GitHub Pages, com layout responsivo para PC e iPhone.
+
+Em Settings → Pages:
+1. Build and deployment → Deploy from a branch
+2. Branch: `main`
+3. Folder: `/ (root)`
+4. Save
 
 ## Vídeos
 
-Coloque os dois vídeos MP4 dentro de `assets/`:
-- `case-1.mp4`
-- `case-2.mp4`
-
-No iPhone, os vídeos usam `playsinline`, então podem ser reproduzidos dentro da própria página.
+Os dois vídeos já estão conectados aos players da seção “Cases & Portfólio”.
+No iPhone, os vídeos usam `playsinline` e controles nativos.
 
 ## WhatsApp
 
