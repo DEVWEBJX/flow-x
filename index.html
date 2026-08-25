@@ -307,5 +307,84 @@
         }
     });
 </script>
+  <!-- VISUALIZADOR DE IMAGEM -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">×</button>
+  <img id="lightboxImage" src="" alt="FLOW X">
+</div>
+
+<!-- RODAPÉ -->
+<footer class="footer">
+
+  <div class="footer-logo">
+    FLOW<span>X</span>
+  </div>
+
+  <p class="footer-text">
+    Identidade, performance e estilo.
+  </p>
+
+  <a
+    class="footer-instagram"
+    href="COLOQUE_AQUI_SEU_LINK_DO_INSTAGRAM"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    ◎ Instagram
+  </a>
+
+  <div class="footer-copy">
+    © 2026 FLOW X — Todos os direitos reservados.
+  </div>
+
+</footer>
+  <script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
+
+/* Todos os botões VER COLEÇÃO */
+document.querySelectorAll(".btn, .btn-primary, .collection-btn").forEach(button => {
+
+  button.addEventListener("click", function(event) {
+
+    event.preventDefault();
+
+    const card = button.closest("article, .wear-panel, .case-video, .card");
+
+    const image = card ? card.querySelector("img") : null;
+
+    if (image) {
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt || "FLOW X";
+      lightbox.classList.add("active");
+    }
+
+  });
+
+});
+
+/* Fechar */
+lightboxClose.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+  lightboxImage.src = "";
+});
+
+/* Fechar clicando fora da imagem */
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) {
+    lightbox.classList.remove("active");
+    lightboxImage.src = "";
+  }
+});
+
+/* Fechar com ESC */
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    lightbox.classList.remove("active");
+    lightboxImage.src = "";
+  }
+});
+</script>
 </body>
 </html>
