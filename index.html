@@ -260,5 +260,52 @@
   </footer>
 
   <script src="script.js"></script>
+  <!-- FLOW X WEAR LIGHTBOX -->
+
+<div class="wear-lightbox" id="wearLightbox">
+    <button class="wear-lightbox-close" id="wearLightboxClose" aria-label="Fechar">
+        ×
+    </button>
+
+    <img id="wearLightboxImage" src="" alt="FLOW X Wear">
+</div>
+
+<script>
+    const wearLightbox = document.getElementById("wearLightbox");
+    const wearLightboxImage = document.getElementById("wearLightboxImage");
+    const wearLightboxClose = document.getElementById("wearLightboxClose");
+
+    document.querySelectorAll(".wear-image-wrap img").forEach(image => {
+
+        image.addEventListener("click", () => {
+
+            wearLightboxImage.src = image.src;
+            wearLightboxImage.alt = image.alt || "FLOW X Wear";
+
+            wearLightbox.classList.add("active");
+            document.body.style.overflow = "hidden";
+        });
+
+    });
+
+    function closeWearLightbox() {
+        wearLightbox.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    wearLightboxClose.addEventListener("click", closeWearLightbox);
+
+    wearLightbox.addEventListener("click", event => {
+        if (event.target === wearLightbox) {
+            closeWearLightbox();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeWearLightbox();
+        }
+    });
+</script>
 </body>
 </html>
