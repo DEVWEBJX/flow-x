@@ -40,3 +40,41 @@ const whatsapp = document.getElementById("whatsapp");
 if (whatsapp) {
   whatsapp.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 }
+/* =========================================
+   FLOW X WEAR — LIGHTBOX
+   ========================================= */
+
+const wearImageWrap = document.querySelector(".wear-image-wrap");
+const wearLightbox = document.getElementById("wearLightbox");
+const wearLightboxImage = document.getElementById("wearLightboxImage");
+const wearLightboxClose = document.getElementById("wearLightboxClose");
+
+if (wearImageWrap && wearLightbox && wearLightboxImage && wearLightboxClose) {
+
+    wearImageWrap.addEventListener("click", () => {
+        const image = wearImageWrap.querySelector("img");
+
+        if (image) {
+            wearLightboxImage.src = image.src;
+            wearLightboxImage.alt = image.alt;
+        }
+
+        wearLightbox.classList.add("active");
+    });
+
+    wearLightboxClose.addEventListener("click", () => {
+        wearLightbox.classList.remove("active");
+    });
+
+    wearLightbox.addEventListener("click", (event) => {
+        if (event.target === wearLightbox) {
+            wearLightbox.classList.remove("active");
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            wearLightbox.classList.remove("active");
+        }
+    });
+}
