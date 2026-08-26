@@ -37,13 +37,13 @@
           <p class="eyebrow">ECOSSISTEMA DE COMUNICAÇÃO & MARCA</p>
           <h1>Comunicação que <span>conecta.</span><br>Estratégia que transforma.</h1>
           <p class="lead">
-            Conectamos estratégia, criatividade e produção audiovisual para transformar
-            marcas, negócios e experiências em comunicação que gera movimento.
+            A FLOW X conecta estratégia, criatividade e tecnologia para transformar
+            negócios, marcas e pessoas através da comunicação.
           </p>
 
           <div class="buttons">
             <a class="btn primary" href="#ecossistema">Conheça o ecossistema →</a>
-            <a class="btn outline" href="#contato">Fale com A FLOW X</a>
+            <a class="btn outline" href="#contato">Fale com especialista</a>
           </div>
 
           <div class="mini-proof">
@@ -173,8 +173,8 @@
             </div>
             <div class="case-info">
               <p class="service-kicker">FLOW X STUDIO</p>
-              <h3>Clube Aquático</h3>
-              <p>Uma visão completa do espaço, destacando estrutura, localização e a experiência que transforma cada visita.</p>
+              <h3>Estabelecimento 01</h3>
+              <p>Vídeo aéreo para apresentar o espaço, localização e experiência da marca.</p>
             </div>
           </article>
 
@@ -188,10 +188,15 @@
             </div>
             <div class="case-info">
               <p class="service-kicker">FLOW X STUDIO</p>
-              <h3>Restaurante Minas Demais </h3>
-              <p>Sabores, ambiente e identidade em uma experiência audiovisual que valoriza a essência do Restaurante Minas Demais.</p>
+              <h3>Estabelecimento 02</h3>
+              <p>Segundo projeto audiovisual apresentado em uma experiência responsiva para celular e PC.</p>
             </div>
           </article>
+        </div>
+
+        <div class="portfolio-note reveal">
+          <strong>Pronto para receber os arquivos.</strong>
+          <span>Coloque os dois MP4 na pasta <code>assets</code> com os nomes <code>case-1.mp4</code> e <code>case-2.mp4</code>.</span>
         </div>
 
         <div class="wear-showcase" id="wear">
@@ -260,158 +265,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <!-- FLOW X WEAR LIGHTBOX -->
-
-<div class="wear-lightbox" id="wearLightbox">
-    <button class="wear-lightbox-close" id="wearLightboxClose" aria-label="Fechar">
-        ×
-    </button>
-
-    <img id="wearLightboxImage" src="" alt="FLOW X Wear">
-</div>
-
-<script>
-    const wearLightbox = document.getElementById("wearLightbox");
-    const wearLightboxImage = document.getElementById("wearLightboxImage");
-    const wearLightboxClose = document.getElementById("wearLightboxClose");
-
-    document.querySelectorAll(".wear-image-wrap img").forEach(image => {
-
-        image.addEventListener("click", () => {
-
-            wearLightboxImage.src = image.src;
-            wearLightboxImage.alt = image.alt || "FLOW X Wear";
-
-            wearLightbox.classList.add("active");
-            document.body.style.overflow = "hidden";
-        });
-
-    });
-
-    function closeWearLightbox() {
-        wearLightbox.classList.remove("active");
-        document.body.style.overflow = "";
-    }
-
-    wearLightboxClose.addEventListener("click", closeWearLightbox);
-
-    wearLightbox.addEventListener("click", event => {
-        if (event.target === wearLightbox) {
-            closeWearLightbox();
-        }
-    });
-
-    document.addEventListener("keydown", event => {
-        if (event.key === "Escape") {
-            closeWearLightbox();
-        }
-    });
-</script>
-
-<!-- RODAPÉ -->
-<footer class="footer">
-
-  <div class="footer-logo">
-    FLOW<span>X</span>
-  </div>
-
-  <p class="footer-text">
-    Identidade, performance e estilo.
-  </p>
-
- <a
-  class="footer-instagram"
-  href="https://www.instagram.com/flowx_studio/?utm_source=ig_web_button_share_sheet"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <svg
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <rect
-      x="3"
-      y="3"
-      width="18"
-      height="18"
-      rx="5"
-      stroke="currentColor"
-      stroke-width="2"
-    />
-    <circle
-      cx="12"
-      cy="12"
-      r="4"
-      stroke="currentColor"
-      stroke-width="2"
-    />
-    <circle
-      cx="17.5"
-      cy="6.5"
-      r="1"
-      fill="currentColor"
-    />
-  </svg>
-
-  Instagram
-</a>
-
-  <div class="footer-copy">
-    © 2026 FLOW X — Todos os direitos reservados.
-  </div>
-
-</footer>
-  <script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
-const lightboxClose = document.getElementById("lightboxClose");
-
-/* Todos os botões VER COLEÇÃO */
-document.querySelectorAll(".btn, .btn-primary, .collection-btn").forEach(button => {
-
-  button.addEventListener("click", function(event) {
-
-    event.preventDefault();
-
-    const card = button.closest("article, .wear-panel, .case-video, .card");
-
-    const image = card ? card.querySelector("img") : null;
-
-    if (image) {
-      lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt || "FLOW X";
-      lightbox.classList.add("active");
-    }
-
-  });
-
-});
-
-/* Fechar */
-lightboxClose.addEventListener("click", () => {
-  lightbox.classList.remove("active");
-  lightboxImage.src = "";
-});
-
-/* Fechar clicando fora da imagem */
-lightbox.addEventListener("click", (event) => {
-  if (event.target === lightbox) {
-    lightbox.classList.remove("active");
-    lightboxImage.src = "";
-  }
-});
-
-/* Fechar com ESC */
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    lightbox.classList.remove("active");
-    lightboxImage.src = "";
-  }
-});
-</script>
 </body>
 </html>

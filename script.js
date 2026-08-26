@@ -32,11 +32,11 @@ document.getElementById("year").textContent = new Date().getFullYear();
   TROQUE PELO NÚMERO OFICIAL DA FLOW X.
   Exemplo: 5511999999999
 */
-const whatsappNumber = "5531991023510";
+const whatsappNumber = "5511999999999";
 const whatsappMessage = encodeURIComponent(
   "Olá, FLOW X! Vim pelo site e gostaria de falar sobre um projeto."
 );
 const whatsapp = document.getElementById("whatsapp");
 if (whatsapp) {
-  whatsapp.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}';
-});
+  whatsapp.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+}
