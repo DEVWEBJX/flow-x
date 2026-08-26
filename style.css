@@ -272,3 +272,35 @@ footer{background:#050409;border-top:1px solid var(--border);padding:35px 0}
         font-size: 22px;
     }
 }
+/* =========================================
+   INSTAGRAM — FOOTER
+   ========================================= */
+
+.footer-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.instagram-icon {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+}
+
+.instagram-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.instagram-icon svg circle:last-child {
+    fill: currentColor;
+    stroke: none;
+}
