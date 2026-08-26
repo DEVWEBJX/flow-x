@@ -32,7 +32,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
   TROQUE PELO NÚMERO OFICIAL DA FLOW X.
   Exemplo: 5511999999999
 */
-const whatsappNumber = "5511967314944";
+const whatsappNumber = "5531991023510";
 const whatsappMessage = encodeURIComponent(
   "Olá, FLOW X! Vim pelo site e gostaria de falar sobre um projeto."
 );
