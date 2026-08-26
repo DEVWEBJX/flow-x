@@ -44,15 +44,15 @@ if (whatsapp) {
    FLOW X WEAR — LIGHTBOX
    ========================================= */
 
-const wearImageWrap = document.querySelector(".wear-image-wrap");
+const wearImageWrap = document.querySelectorALL(".wear-image-wrap");
 const wearLightbox = document.getElementById("wearLightbox");
 const wearLightboxImage = document.getElementById("wearLightboxImage");
 const wearLightboxClose = document.getElementById("wearLightboxClose");
 
-if (wearImageWrap && wearLightbox && wearLightboxImage && wearLightboxClose) {
+if (wearImageWrap.lenght && wearLightbox && wearLightboxImage && wearLightboxClose) {
 
-    wearImageWrap.addEventListener("click", () => {
-        const image = wearImageWrap.querySelector("img");
+    wearImageWrap.forEach(wearImagemWrap => {
+      const image = wearImageWrap.querySelector("img");
 
         if (image) {
             wearLightboxImage.src = image.src;
@@ -61,20 +61,20 @@ if (wearImageWrap && wearLightbox && wearLightboxImage && wearLightboxClose) {
 
         wearLightbox.classList.add("active");
     });
-
-    wearLightboxClose.addEventListener("click", () => {
-        wearLightbox.classList.remove("active");
-    });
-
-    wearLightbox.addEventListener("click", (event) => {
-        if (event.target === wearLightbox) {
-            wearLightbox.classList.remove("active");
-        }
-    });
+  });
+  wearLightboxClose.addEventListener("click", () => {
+    wearLightbox.classList.remove("active");
+  });
+    
+  wearLightbox.addEventListener("click", (event) => {
+    if (event.target === wearLightbox) {
+       wearLightbox.classList.remove("active");
+    }
+  });
 
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            wearLightbox.classList.remove("active");
-        }
+      if (event.key === "Escape") {
+        wearLightbox.classList.remove("active");
+      }
     });
 }
